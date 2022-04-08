@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap');
+:root {
+    --main-color: #1C334F;
+    --sub-color: #EAA023;
+    --text-color: #fff;
+    --conl-color: #0c1023;
+}
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+.btn {
+    background-color: transparent;
+    padding: 15px 30px;
+    border: 2px solid var(--sub-color);
+    border-radius: 50px;
+    color: var(--sub-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn:hover {
+    background-color: #ccc;
+}
+.section-pading {
+    padding: 60px 0;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+.justify-conten {
+    justify-content: space-between;
+}
+.container {
+    margin: auto;
+    max-width: 1200px;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.menu .logo img {
+    width: 70px;
+}
+.menu {
+    background-color:transparent ;
+    position: fixed;
+    width: 100vw;
+    height: 70px;
+    z-index: 99;
+}
+.menu::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-color);
+    z-index: -1;
+    transform: translateY(-100%);
+}
+.menu.active::before {
+    transform: translateY(0);
+}
+.menu .menu-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+}
+.menu .menu-bar.active {
+    position: fixed;
+    top: 30px;
+    right: 0;
+    transform: translateX(-200px);
+    z-index: 1;
+}
+.menu .menu-bar.active span {
+    background-color: transparent;
+}
+.menu .menu-bar.active span::before {
+    transform: rotate(-135deg);
+}
+.menu .menu-bar.active span::after {
+    transform: rotate(135deg);
+}
+.menu .menu-bar span {
+    display: block;
+    height: 2px;
+    width: 40px;
+    background-color: var(--text-color);
+    position: relative;
+}
+.menu .menu-bar span::before {
+    height: 100%;
+    width: 100%;
+    content: "";
+    display: block;
+    position: absolute;
+    transform: translateY(-10px);
+    background-color: var(--text-color);
+    transition: all 0.3s ease;
+}
+.menu .menu-bar span::after {
+    height: 100%;
+    width: 100%;
+    content: "";
+    display: block;
+    position: absolute;
+    transform: translateY(10px);
+    background-color: var(--text-color);
+    transition: all 0.3s ease;
+}
+.menu-items {
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--main-color);
+    right: 0;
+    top: 0;
+    padding: 100px 50px;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+}
+.menu-items.active {
+    transform: translateX(0);
+}
+.menu-tiem a {
+    color: var(--text-color);
+    line-height: 40px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+/* -------------- heading ------------ */
+.heading-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.heading-img::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("/img/menu1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: -2;
+    animation: Inout 5s infinite;
+}
+@keyframes Inout {
+    0%,100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+.heading-img::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.2;
+    z-index: -2;
+}
+.heading-img-content {
+    text-align: center;
+    max-width: 500px;
+    font-family:'Dancing Script', cursive;
+}
+.heading-img-content h2 {
+    font-size: 50px;
+    color: var(--text-color);
+}
+.heading-img-content p {
+    font-size: 25px;
+    color: var(--text-color);
+    font-weight: bold;
+    margin: 15px;
+}
+/* ------------ about ------------*/
+.about {
+    background-color: var(--main-color);
+}
+.about-item-img img {
+    width: 100%;
+    border-radius: 10px;
+}
+.about-title {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+.about-title h2 {
+    font-size: 30px;
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+.about-title h2::before {
+    content: attr(data-title);
+    display: block;
+    color: var(--sub-color);
+    font-size: 30px;
+    font-family:'Dancing Script', cursive;
+}
+
+.about-item {
+    width: calc(100%/2);
+    padding: 15px;
+}
+.about-item h2 {
+    color: var(--text-color);
+    font-size: 30px;
+}
+.about-item p {
+    font-size: 18px;
+    margin: 15px 0 30px;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+.about-item-img {
+    position: relative;
+}
+.about-item-img span {
+    position: absolute;
+    font-size: 30px;
+    top: 50%;
+    left: 50%;
+    color: var(--main-color);
+    font-family:'Dancing Script', cursive;
+    font-weight: 900;
+    transform: translate(-50%,-50%);
+}
+.about-item-img::before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    border: 3px solid var(--sub-color);
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%,-50%);
+    animation: xoayvong 5s infinite;
+}
+@keyframes xoayvong {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* ------------ content ---------- */
+.content {
+    background-color: var(--conl-color);
+}
+.content-menu {
+    width: 100%;
+    text-align: center;
+}
+.content-btn {
+    background-color: transparent;
+    margin: 15px 12px;
+    border: none;
+    color: var(--text-color);
+    font-size: 16px;
+    cursor: pointer;
+}
+.content-btn.active {
+    color: var(--sub-color);
+}
+.content-btn:hover {
+    color: var(--sub-color);
+}
+.content-food {
+    display: flex;
+    align-items: center;
+}
+.content-food img {
+    width: 100px;
+    margin-right: 20px;
+}
+.content-items {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    position: relative;
+}
+.content-items::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 0;
+    border: 1px dashed var(--main-color);
+    width: 90%;
+}
+.content-items:hover .content-food p {
+    color: var(--sub-color);
+}
+.content-items:hover .content-pice p {
+    color: var(--text-color);
+}
+.content-food p {
+    color: var(--text-color);
+    transition: all 0.3s ease-in;
+    font-size: 20px;
+}
+.content-pice p {
+    color: var(--sub-color);
+    transition: all 0.3s ease-in;
+    font-size: 20px;
+}
+.content-menu-list {
+    display: none;
+}
+.content-menu-list.active {
+    display: flex;
+    flex-wrap: wrap;
+}
+/* -----------------gioi thieu dau bep -------*/
+.huida {
+    background-color: var(--main-color);
+
+}
+.huida-items {
+    display: flex;
+    margin: 30px 0;
+}
+.huida-item {
+    width: calc(100%/4 -30px);
+    margin: 0 15px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.5);
+}
+.huida-item p {
+    color: #fff;
+    font-size: 14px;
+    margin: 20px 0;
+}
+.huida-item h2 {
+    color: #fff;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+}
+.huida-item img {
+    width: 150px;
+    margin: 0 10px;
+    border-radius: 50%;
+    border: 4px solid var(--conl-color);
+    transition: all 0.3s ease;
+}
+.huida-item-img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.huida-item:hover img {
+  border-color: #EAA023;  
+}
+.huida-item-star {
+    color: #EAA023;
+}
+/* -------------- dau bep -------- */ 
+.zuofan {
+    background-color: var(--conl-color);
+}
+.zuofan-tou {
+    width: calc(100%/3 - 30px);
+    padding: 20px;
+    position: relative;
+}
+.zuofan-tou img {
+    width: 100%;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+.zuofan-tou:hover .zuofan-tou-wen {
+    background-color: var(--sub-color);
+    transform: translateY(-30px);
+    transition: all 0.5s ease;
+}
+.zuofan-tou:hover img {
+    transform: skewX(2deg);
+}
+.zuofan-tou-wen {
+    position: absolute;
+    padding: 5px 0;
+    right: 30px;
+    left: 30px;
+    bottom: 0;
+    background-color: var(--main-color);
+    text-align: center;
+    border-radius: 15px;
+    transform: translateY(50%);
+    transition: all 0.5s ease;
+}
+.zuofan-tou-wen h2 {
+    color: #fff;
+    font-size: 25px;
+}
+.zuofan-tou-wen p {
+    color: #fff;
+    font-size: 16px;
+}
+/*------------- foote ------------*/
+.foote {
+    padding-top: 80px;
+    position: relative;
+}
+.foote-but {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('/img/menu3.jpg');
+    z-index: -2;
+}
+.foote::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    top: 0;
+    opacity: 0.5;
+    z-index: -1;
+}
+.foote-dizhi {
+    text-align: center;
+}
+.foote-dizhi h3 {
+    font-size: 20px;
+    color:#fff;
+}
+.foote-dizhi p {
+    font-size: 18px;
+    color: var(--text-color);
+    margin: 12px 0;
+}
+.foote-even {
+    margin-top: 12px 0;
+}
+.foote-even i {
+    font-size: 18px;
+    color: var(--text-color);
+    margin-right: 10px;
+    cursor: pointer;
+    transition: var(--sub-color);
+}
+.foote-even i:hover {
+    color: #EAA023;
+}
+.foote-end {
+    padding: 30px 0;
+}
+.foote-copy {
+    text-align: center;
+    height: 40px;
+    margin-top: 20px;
+    border-top: 2px solid #ccc;
+    color: #fff;
+    line-height: 150px;
+}
